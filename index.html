@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Library</title>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <h1>bibilotheca</h1>
+            </div>
+            <div class="headerButtons">
+
+            </div>
+        </div>
+
+        <div class="booksButtons">
+            <button onclick='openForm()'type="button" class="bookButton">+ Add Book</button>
+        </div>
+
+        <div class="formPop" id="addBook">
+            <form action="" class="formContainer">
+                <div>
+                    <label for="bookTitle">Title:</label>
+                    <input type="text" id="bookTitle" placeholder="The Hobbit">
+                </div>
+                <div>
+                    <label for="bookAuthor">Author:</label>
+                    <input type="text" id="bookAuthor" placeholder="Tolkien">
+                </div>
+                <div>
+                    <label for="bookPages">Pages:</label>
+                    <input type="number" id="bookPages" placeholder="100">
+                </div>
+                <fieldset>
+                    <legend>Have you read?</legend>
+                    <label for="readYes">Yes</label>
+                    <input type="radio" id="readYes">
+                    <label for="readNo">No</label>
+                    <input type="radio" id="readNo">
+                </fieldset>
+                <button onclick="submitBook()" type="submit" class="btn">Add</button>
+                <button onclick="closeForm()" type="button" class="btn cancel">Close</button>
+            </form>
+        </div>
+
+        <div class="booksContainer">
+            <div class="test">1</div>
+            <div class="test">2</div>
+            <div class="test">3</div>
+            <div class="test">4</div>
+            <div class="test">5</div>
+
+        </div>
+        <footer>
+            <div class="footer">
+                <span>Made By RatedYK</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

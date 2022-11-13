@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 2fr 1fr 8fr 1fr;
+    grid-template-areas: 'header'
+                         'buttons'
+                         'books'
+                         'footer';
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    background-color: lightcyan;
+    align-items: center;
+}
+
+.booksButtons {
+    grid-area: buttons;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+}
+
+.formPop {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.formContainer {
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
+    background-color: white;
+}
+
+.formContainer div {
+    display: grid;
+}
+
+.formContainer input {
+    margin: 0 1rem;
+    padding: 7px;
+}
+
+.booksContainer {
+    grid-area: books;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    background-color: lightcoral;
+    gap: 15px;
+}
+
+.test {
+    background-color: lightgoldenrodyellow;
+    height: 200px;
+
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: footer;
+}
