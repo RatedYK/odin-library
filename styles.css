@@ -62,8 +62,13 @@
 
 .test {
     background-color: lightgoldenrodyellow;
+    display: flex;
+    flex-direction: column;
+    flex-grow: none;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
     height: 200px;
-
 }
 
 .footer {
