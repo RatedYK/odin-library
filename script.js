@@ -23,10 +23,10 @@ const formOptions = {
     openForm: () => document.querySelector('.formPop').style.display = "block",
     closeForm: () => document.querySelector('.formPop').style.display = "none",
     clearForm: () => {
-                    document.querySelector('#bookTitle').textContent = "";
-                    document.querySelector('#bookAuthor').textContent = "";
-                    document.querySelector('#bookPages').textContent = "";
-                    document.querySelector('#ReadYes').checked = true;
+                    document.querySelector('#bookTitle').value = "";
+                    document.querySelector('#bookAuthor').value = "";
+                    document.querySelector('#bookPages').value = "";
+                    document.querySelector('#readYes').checked = true;
     }
 }
 
@@ -57,11 +57,24 @@ function displayBookOnCard() {
         const bookPages = document.createElement('p');
         const bookRead = document.createElement('button')
         const bookDelete = document.createElement('button');
+
+        bookRead.classList.add('btn');
+        book.read === 'Read' ? bookRead.classList.add('green') : bookRead.classList.add('red');
+        bookDelete.classList.add('btn', 'cancel');
+
         bookCard.append(bookTitle, bookAuthor, bookPages, bookRead, bookDelete);
 
         bookRead.addEventListener('click', ()=> { //add a toggleable function for read and not read
             book.changeStatus();
             bookRead.textContent = `${book.read}`;
+
+            if (book.read === 'Read') { //changes the color of the 'Read' button
+                bookRead.classList.toggle('green');
+                bookRead.classList.toggle('red');
+            }else if (book.read === 'Not Read') {
+                bookRead.classList.toggle('red');
+                bookRead.classList.toggle('green');
+            };
         })
 
         bookDelete.addEventListener('click', ()=> { //take out the book and redisplay all books

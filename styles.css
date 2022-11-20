@@ -4,6 +4,31 @@
     margin: 0px;
 }
 
+:root {
+    --base-color: #e3dfdc;
+    --accent-color: #fff5e0;
+    --sub-color: #1a0b08;
+    font-family: sans-serif;
+}
+
+input, button, label {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover, input:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
 .container {
     display: grid;
     height: 100vh;
@@ -17,15 +42,37 @@
 .header {
     grid-area: header;
     display: flex;
-    background-color: lightcyan;
+    background-color: var(--base-color);
     align-items: center;
+}
+
+.title {
+    margin: 1rem;
+    font-size: x-large;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.logo {
+    max-width: 60px;
 }
 
 .booksButtons {
     grid-area: buttons;
-    background-color: lightgray;
+    background-color: white;
     display: flex;
     justify-content: center;
+    padding: 5px;
+}
+
+.booksButtons .btn {
+    padding: max(20px, 2rem);
+    border-radius: 50px;
+    background-color: var(--sub-color);
+    font-size: x-large;
+    color: white;
+    border: var(--base-color) solid 5px;
+
 }
 
 .formPop {
@@ -34,13 +81,17 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    background-color: silver;
+    border: solid 5px var(--base-color);
+    border-radius: 30px;
 }
 
 .formContainer {
     padding: 2rem;
     display: grid;
     gap: 1rem;
-    background-color: white;
+    background-color: silver;
+    border-radius: 30px;
 }
 
 .formContainer div {
@@ -50,30 +101,83 @@
 .formContainer input {
     margin: 0 1rem;
     padding: 7px;
+    border-radius: 10px;
+    border: none;
+}
+
+.formContainer label, fieldset  {
+    font-size: large;
+    font-weight:600;
+}
+
+.formContainer .btn {
+    color: white;
+    padding: 1rem;
+    border-radius: 20px;
+    border: none;
 }
 
 .booksContainer {
     grid-area: books;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    background-color: lightcoral;
+    background-color: white;
     gap: 15px;
+    padding: 1rem;
+    overflow: scroll;
 }
 
 .test {
-    background-color: lightgoldenrodyellow;
     display: flex;
     flex-direction: column;
     flex-grow: none;
     justify-content: center;
     align-items: center;    
     font-size: x-large;
-    height: 200px;
+    gap: 10px;
+    height: 250px;
+    background-color: var(--sub-color);
+    color: var(--accent-color);
+    border-radius: 30px;
+}
+
+.test .btn {
+    padding: 5px;
+    margin: 5px;
+    width: 50%;
+    border: none;
+    border-radius: 30px;
+    color: white;
+}
+
+.cancel {
+    background-color: #c41a30;
+}
+
+.green {
+    background-color: darkcyan;
+}
+
+.red {
+    background-color: #c41a30;
 }
 
 .footer {
     display: flex;
+    height: 100%;
     align-items: center;
     justify-content: center;
     grid-area: footer;
+    color: black;
+    background-color: var(--base-color);
+}
+.footer span {
+    display: flex;
+    align-items: center;
+    font-size: small;
+    gap: 5px;
+}
+
+.footer img {
+    max-width: 20px;
 }
